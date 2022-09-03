@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 13px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+section.main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+div.imgBackground {
+    width: 100%;
+    height: 30%;
+    background-image: url(images/bg-main-mobile.png);
+    background-size: cover;
+    
+}
+
+div.frontCard, div.backCard {
+    position: fixed;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 280px;
+    height: 160px;
+}
+
+div.frontCard {
+    display: flex;
+    flex-direction: column;
+    background-image: url(images/bg-card-front.png);
+    top: 110px;
+    left: 20px; 
+    z-index: 1;
+    padding: 15px;
+}
+
+div.frontCard img {
+    object-fit: contain;
+    width: 25%;
+}
+
+
+div.frontCard p.cardNumber {
+    padding-top: 25px;
+    font-size: 18px;
+}
+
+div.frontCard p {
+    color: white;
+    font-size: 11px;
+}
+
+div.frontCard div p {
+    float: left;
+}
+
+
+div.frontCard div p:nth-child(2) {
+    float: right;
+}
+
+div.clearfix::after {
+content: "";
+clear: both;
+display: table;
+}
+
+div.backCard {
+    top: 23px;
+    right: 20px; 
+    background-image: url(images/bg-card-back.png);
+}
+
+div.backCard p {
+    text-align: right;
+    line-height: 140px;
+    padding-right: 40px;
+    color: white;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+div.cardInfo {
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    justify-content: space-evenly;
+    padding: 30px;
+    padding-top: 70px;
+}
+
+div.cardInfo div:nth-child(1) input, div.cardInfo div:nth-child(2) input {
+    width: 100%;
+}
+
+div input {
+    height: 45px;
+    border-radius: 5px;
+    border: 1px solid rgb(211, 211, 211);
+    padding: 15px;
+    font-size: 18px;
+}
+
+div input::placeholder {
+    opacity: 0.4;
+}
+
+div  p {
+    padding: 10px 0;
+    letter-spacing: 2px;
+    color: hsl(278, 68%, 20%);
+}
+
+div.cardInfo div:nth-child(3) p {
+    width: 50%;
+}
+
+div.cardInfo div:nth-child(3) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+div.cardInfo div:nth-child(3) input:nth-of-type(1), div.cardInfo div:nth-child(3) input:nth-of-type(2) {
+    width: 20%;
+}
+
+ div.cardInfo div:nth-child(3) input:nth-of-type(3) {
+    width: 50%;
+ }
+
+button {
+    border: none;
+    border-radius: 5px;
+    margin-top: 30px;
+    height: 50px;
+    background-color: hsl(278, 68%, 11%);
+    color: white;
+    font-size: 18px;
+}
+
+
+@media (min-width: 700px) {
+
+section.main {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+div.imgBackground {
+    width: 100%;
+    height: 30%;
+    background-image: url(images/bg-main-mobile.png);
+    background-size: cover;
+}
+
+div.frontCard, div.backCard {
+    position: fixed;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 280px;
+    height: 160px;
+}
+
+div.frontCard {
+    display: flex;
+    flex-direction: column;
+    background-image: url(images/bg-card-front.png);
+    top: 110px;
+    left: 20px; 
+    z-index: 1;
+    padding: 15px;
+}
+
+div.frontCard img {
+    object-fit: contain;
+    width: 25%;
+}
+
+
+div.frontCard p.cardNumber {
+    padding-top: 25px;
+    font-size: 18px;
+}
+
+div.frontCard p {
+    color: white;
+    font-size: 11px;
+}
+
+div.frontCard div p {
+    float: left;
+}
+
+
+div.frontCard div p:nth-child(2) {
+    float: right;
+}
+
+div.clearfix::after {
+content: "";
+clear: both;
+display: table;
+}
+
+div.backCard {
+    top: 23px;
+    right: 20px; 
+    background-image: url(images/bg-card-back.png);
+}
+
+div.backCard p {
+    text-align: right;
+    line-height: 140px;
+    padding-right: 40px;
+    color: white;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+div.cardInfo {
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    justify-content: space-evenly;
+    padding: 30px;
+    padding-top: 70px;
+}
+
+div.cardInfo div:nth-child(1) input, div.cardInfo div:nth-child(2) input {
+    width: 100%;
+}
+
+div input {
+    height: 45px;
+    border-radius: 5px;
+    border: 1px solid rgb(211, 211, 211);
+    padding: 15px;
+    font-size: 18px;
+}
+
+div input::placeholder {
+    opacity: 0.4;
+}
+
+div  p {
+    padding: 10px 0;
+    letter-spacing: 2px;
+    color: hsl(278, 68%, 20%);
+}
+
+div.cardInfo div:nth-child(3) p {
+    width: 50%;
+}
+
+div.cardInfo div:nth-child(3) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+div.cardInfo div:nth-child(3) input:nth-of-type(1), div.cardInfo div:nth-child(3) input:nth-of-type(2) {
+    width: 20%;
+}
+
+ div.cardInfo div:nth-child(3) input:nth-of-type(3) {
+    width: 50%;
+ }
+
+button {
+    border: none;
+    border-radius: 5px;
+    margin-top: 30px;
+    height: 50px;
+    background-color: hsl(278, 68%, 11%);
+    color: white;
+    font-size: 18px;
+}
+
+}
+
+
+
+
+.attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
