@@ -152,8 +152,18 @@ button {
     font-size: 18px;
 }
 
+.attribution {
+      font-size: 11px;
+      text-align: center;
+    }
 
-@media (min-width: 700px) {
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+
+
+@media (min-width: 1024px) {
 
 section.main {
     flex-direction: row;
@@ -167,11 +177,12 @@ div.imgBackground {
 div.frontCard, div.backCard {
     width: 400px;
     height: 220px;
+    transition: .1s;
 }
 
 div.frontCard {
     top: 15vh;
-    left: 10vw; 
+    left: 2vw; 
     padding: 30px;
 }
 
@@ -196,7 +207,7 @@ div.frontCard div p:nth-child(2) {
 
 div.backCard {
     top: 42vh;
-    left: 15vw;
+    left: 4vw;
 }
 
 div.backCard p {
@@ -205,82 +216,26 @@ div.backCard p {
 }
 
 div.cardInfo {
-    display: flex;
-    flex-direction: column;
     height: 100%;
     width: 70vw;
     justify-content: center;
     align-items: center;
-    padding: 30px;
-    padding-top: 70px;
 }
 
 div.cardWrapper {
     width: 400px
 }
 
-div.cardInfo div:nth-child(1) input, div.cardInfo div:nth-child(2) input {
-    width: 100%;
 }
 
-div input {
-    height: 45px;
-    border-radius: 5px;
-    border: 1px solid rgb(211, 211, 211);
-    padding: 15px;
-    font-size: 18px;
+@media (min-width: 1250px) {
+    div.frontCard {
+    left: 10vw; 
 }
 
-div input::placeholder {
-    opacity: 0.4;
-}
-
-div  p {
-    padding: 10px 0;
-    letter-spacing: 2px;
-    color: hsl(278, 68%, 20%);
-}
-
-div.cardInfo div:nth-child(3) p {
-    width: 50%;
-}
-
-div.cardInfo div:nth-child(3) {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-div.cardInfo div:nth-child(3) input:nth-of-type(1), div.cardInfo div:nth-child(3) input:nth-of-type(2) {
-    width: 20%;
-}
-
- div.cardInfo div:nth-child(3) input:nth-of-type(3) {
-    width: 50%;
- }
-
-button {
-    width: 100%;
-    border: none;
-    border-radius: 5px;
-    margin-top: 30px;
-    height: 50px;
-    background-color: hsl(278, 68%, 11%);
-    color: white;
-    font-size: 18px;
+div.backCard {
+    left: 15vw;
 }
 
 }
 
-
-
-
-.attribution {
-      font-size: 11px;
-      text-align: center;
-    }
-
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
