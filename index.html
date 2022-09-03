@@ -19,31 +19,31 @@
     <div class="imgBackground"></div>
     <div class="frontCard">
       <img src="images/card-logo.svg" alt="card-logo">
-      <p class="cardNumber">0000 0000 0000 0000</p>
+      <p data-index='2' class="cardNumber">0000 0000 0000 0000</p>
       <div class="clearfix">
-        <p class="name">JANE APPLESEED</p>
-        <p class="date">00/00</p>
+        <p data-index='1' class="name">JANE APPLESEED</p>
+        <p data-index='3' class="date">00/00</p>
       </div>
     </div>
     <div class="backCard">
-      <p>000</p>
+      <p data-index='5'>000</p>
     </div>
     <div class="cardInfo">
       <div class="cardWrapper">
         <div>
           <p>CARDHOLDER NAME</p>
-          <input class="name" type="text" placeholder="e.g. Jane Appleseed">
+          <input data-input="1" class="name" type="text" placeholder="e.g. Jane Appleseed">
         </div>
         <div>
           <p>CARD NUMBER</p>
-          <input class="cardNumber" type="text" placeholder="e.g. 1234 5678 9123 0000">
+          <input data-input="2" class="cardNumber" type="text" placeholder="e.g. 1234 5678 9123 0000">
         </div>
         <div>
           <p>Exp. Date (MM/YY)</p>
           <p>CVC</p>
-          <input class="dateMM" type="text" placeholder="MM">
-          <input class="dateYY" type="text" placeholder="YY">
-          <input class="cvc" type="text" placeholder="e.g. 123">
+          <input data-input="3" class="dateMM" type="text" placeholder="MM">
+          <input data-input="4" class="dateYY" type="text" placeholder="YY">
+          <input data-input="5" class="cvc" type="text" placeholder="e.g. 123">
         </div>
         <button>Confirm</button>
       </div>
@@ -54,6 +54,7 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
+  <script src="script.js"></script>
 </body>
 
 </html>
