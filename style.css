@@ -142,6 +142,7 @@ div.cardInfo div:nth-child(3) input:nth-of-type(1), div.cardInfo div:nth-child(3
  }
 
 button {
+    width: 100%;
     border: none;
     border-radius: 5px;
     margin-top: 30px;
@@ -155,90 +156,67 @@ button {
 @media (min-width: 700px) {
 
 section.main {
-    display: flex;
     flex-direction: row;
-    height: 100vh;
 }
 
 div.imgBackground {
-    width: 100%;
-    height: 30%;
-    background-image: url(images/bg-main-mobile.png);
-    background-size: cover;
+    width: 30vw;
+    height: 100%;
 }
 
 div.frontCard, div.backCard {
-    position: fixed;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 280px;
-    height: 160px;
+    width: 400px;
+    height: 220px;
 }
 
 div.frontCard {
-    display: flex;
-    flex-direction: column;
-    background-image: url(images/bg-card-front.png);
-    top: 110px;
-    left: 20px; 
-    z-index: 1;
-    padding: 15px;
+    top: 15vh;
+    left: 10vw; 
+    padding: 30px;
 }
 
 div.frontCard img {
-    object-fit: contain;
-    width: 25%;
+    width: 20%;
 }
 
 
 div.frontCard p.cardNumber {
-    padding-top: 25px;
-    font-size: 18px;
+    padding-top: 60px;
+    font-size: 24px;
+    letter-spacing: 3px;
 }
 
 div.frontCard p {
-    color: white;
-    font-size: 11px;
+    padding-top: 15px;
 }
-
-div.frontCard div p {
-    float: left;
-}
-
 
 div.frontCard div p:nth-child(2) {
-    float: right;
-}
-
-div.clearfix::after {
-content: "";
-clear: both;
-display: table;
+    padding-right: 5px;
 }
 
 div.backCard {
-    top: 23px;
-    right: 20px; 
-    background-image: url(images/bg-card-back.png);
+    top: 42vh;
+    left: 15vw;
 }
 
 div.backCard p {
-    text-align: right;
-    line-height: 140px;
-    padding-right: 40px;
-    color: white;
-    font-size: 11px;
-    letter-spacing: 3px;
+    line-height: 195px;
+    padding-right: 60px;
 }
 
 div.cardInfo {
     display: flex;
     flex-direction: column;
-    height: 70%;
-    justify-content: space-evenly;
+    height: 100%;
+    width: 70vw;
+    justify-content: center;
+    align-items: center;
     padding: 30px;
     padding-top: 70px;
+}
+
+div.cardWrapper {
+    width: 400px
 }
 
 div.cardInfo div:nth-child(1) input, div.cardInfo div:nth-child(2) input {
@@ -283,6 +261,7 @@ div.cardInfo div:nth-child(3) input:nth-of-type(1), div.cardInfo div:nth-child(3
  }
 
 button {
+    width: 100%;
     border: none;
     border-radius: 5px;
     margin-top: 30px;
