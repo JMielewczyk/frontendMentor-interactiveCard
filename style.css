@@ -122,6 +122,13 @@ div  p {
     color: hsl(278, 68%, 20%);
 }
 
+
+p.wrongFormula {
+    display: block;
+    opacity: 0;
+    color: red;
+}
+
 div.cardInfo div:nth-child(3) p {
     width: 50%;
 }
