@@ -22,7 +22,9 @@
       <p data-index='2' class="cardNumber">0000 0000 0000 0000</p>
       <div class="clearfix">
         <p data-index='1' class="name">JANE APPLESEED</p>
-        <p data-index='3' class="date">00/00</p>
+        <p data-index='4' class="date">00</p>
+        <p>/</p>
+        <p data-index='3' class="date">00</p>
       </div>
     </div>
     <div class="backCard">
@@ -32,26 +34,33 @@
       <div class="cardWrapper">
         <div>
           <p>CARDHOLDER NAME</p>
-          <input data-input="1" class="name" type="text" placeholder="e.g. Jane Appleseed">
+          <input data-input="1" class="name" maxlength="21" type="text" placeholder="e.g. Jane Appleseed">
           <p class="wrongFormula">Wrong format, letters only</p>
         </div>
         <div>
           <p>CARD NUMBER</p>
-          <input data-input="2" class="cardNumber" type="text" placeholder="e.g. 1234 5678 9123 0000">
+          <input data-input="2" class="cardNumber" maxlength="16" type="text" placeholder="e.g. 1234 5678 9123 0000">
           <p class="wrongFormula">Wrong format, numbers only</p>
         </div>
         <div>
           <p>Exp. Date (MM/YY)</p>
           <p>CVC</p>
-          <input data-input="3" class="dateMM" type="text" placeholder="MM">
-          <input data-input="4" class="dateYY" type="text" placeholder="YY">
-          <input data-input="5" class="cvc" type="text" placeholder="e.g. 123">
+          <input data-input="3" class="dateMM" maxlength="2" type="text" placeholder="MM">
+          <input data-input="4" class="dateYY" maxlength="2" type="text" placeholder="YY">
+          <input data-input="5" class="cvc" maxlength="3" type="text" placeholder="e.g. 123">
           <p class="wrongFormula">Wrong format</p>
           <p class="wrongFormula">Wrong format</p>
         </div>
         <button>Confirm</button>
       </div>
+      <section class="completeState noActive"><img src="images/icon-complete.svg" alt="complete icon">
+        <div class="smallWrapper">
+          <h1>THANK YOU!</h1>
+          <p class="textUnderH1">We've added your card details</p>
+        </div>
+        <button class="button">Continue</button>
     </div>
+  </section>
   </section>
 
   <!-- <div class="attribution">
