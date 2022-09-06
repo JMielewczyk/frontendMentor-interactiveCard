@@ -93,7 +93,7 @@ div.backCard p {
     letter-spacing: 3px;
 }
 
-.cardInfo {
+.startState , .completeState {
     display: flex;
     flex-direction: column;
     height: 70%;
@@ -102,7 +102,7 @@ div.backCard p {
     padding-top: 70px;
 }
 
-div.cardInfo div:nth-child(1) input, div.cardInfo div:nth-child(2) input {
+section.startState div:nth-child(1) input, section.startState div:nth-child(2) input {
     width: 100%;
 }
 
@@ -118,12 +118,14 @@ div input {
 div input::placeholder {
     opacity: 0.4;
 }
- input:focus {
+
+
+ /* input:focus {
     outline: none;
     border-image: linear-gradient(to right, hsl(249, 99%, 64%) , hsl(278, 94%, 30%)) 1;
     border-radius: 15px;
     
-}
+} */
 
 div  p {
     padding: 10px 0;
@@ -139,22 +141,22 @@ p.wrongFormula {
     padding: 2px;
 }
 
-div.cardInfo div:nth-child(3) p {
+section.startState div:nth-child(3) p {
     width: 50%;
 }
 
-div.cardInfo div:nth-child(3) {
+section.startState div:nth-child(3) {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-div.cardInfo div:nth-child(3) input:nth-of-type(1), div.cardInfo div:nth-child(3) input:nth-of-type(2) {
+section.startState div:nth-child(3) input:nth-of-type(1), section.startState div:nth-child(3) input:nth-of-type(2) {
     width: 20%;
 }
 
- div.cardInfo div:nth-child(3) input:nth-of-type(3) {
+ section.startState div:nth-child(3) input:nth-of-type(3) {
     width: 50%;
  }
 
@@ -172,15 +174,7 @@ button {
 
 
 section.completeState {
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    height: 100%;
-    padding-top: 20px;
-}
-section.completeState.noActive {
-    display: none;
 }
 
 .noActive {
@@ -270,7 +264,7 @@ div.backCard p {
     padding-right: 60px;
 }
 
-div.cardInfo {
+section.startState {
     height: 100%;
     width: 70vw;
     justify-content: center;
@@ -279,6 +273,10 @@ div.cardInfo {
 
 div.cardWrapper {
     width: 400px
+}
+
+button {
+    width: 400px;
 }
 
 }

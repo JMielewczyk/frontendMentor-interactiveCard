@@ -1,74 +1,89 @@
 const inputs = [...document.querySelectorAll('[data-input]')]
-const cardInfo = document.querySelectorAll('[data-index]')
-const wrongFormulas = document.querySelectorAll('.wrongFormula')
+const cardText = document.querySelectorAll('[data-index]')
+const wrongFormulas = [...document.querySelectorAll('.wrongFormula')]
 const btns = document.querySelectorAll('button')
-const cardWrapper = document.querySelector('.cardWrapper')
+const startState = document.querySelector('.startState')
 const completeState = document.querySelector('.completeState')
+let inputValue;
+let emptyInputs = [];
+let flag;
+
 
 inputs.forEach(input => input.addEventListener('keyup', (e) => {
     let inputNumber = input.dataset.input;
-    let inputValue = e.target.value
-    let flag = false;
+    inputValue = e.target.value
+    let inputTarget = e.target
+    flag = false;
+    inputTarget.nextElementSibling.textContent = 'Wrong format'
 
-    if (inputNumber == 1 && /^[a-zA-Z ]+$/.test(inputValue) || inputNumber == 1 && inputValue == '') {
-        cardInfo[inputNumber].textContent = inputValue.toUpperCase()
-        if (inputValue == '') {
-            flag = false
-            cardInfo[inputNumber].textContent = 'JANE APPLESEED'
-        }
-    } else if (inputNumber == 1 && !(/^[a-zA-Z ]+$/.test(inputValue))) {
-        inputs[inputNumber - 1].style.outline = '1px solid red'
-        flag = true
-    } else if (inputNumber == 2) {
-        if (Number(inputValue) || inputValue == '') {
-            cardInfo[inputNumber - 2].textContent = inputValue
 
-            if (inputValue == '') {
-                cardInfo[inputNumber - 2].textContent = '0000 0000 0000 0000'
-                flag = false
+    switch (Number(inputNumber)) {
+        case 1:
+            if (/^[a-zA-Z ]+$/.test(inputValue) || !inputValue) {
+                cardText[inputNumber].textContent = inputValue.toUpperCase()
+                if (!inputValue) {
+                    flag = false
+                    cardText[inputNumber].textContent = 'JANE APPLESEED'
+                }
+            } else if (!(/^[a-zA-Z ]+$/.test(inputValue))) {
+                inputs[inputNumber - 1].style.outline = '1px solid red'
+                flag = true
             }
-        } else {
-            inputs[inputNumber - 1].style.outline = '1px solid red'
-            flag = true
-        }
-    } else if (inputNumber == 3) {
-        if (Number(inputValue) <= 12 && Number(inputValue) > 9 || inputValue == '') {
-            cardInfo[inputNumber].textContent = inputValue
-            flag = false
-        } else if (Number(inputValue) <= 9) {
-            cardInfo[inputNumber].textContent = '0' + inputValue
-        } else {
-            flag = true
-        }
-
-        if (inputValue == '') {
-            cardInfo[inputNumber].textContent = '00'
-        }
-    } else if (inputNumber == 4) {
-        if (Number(inputValue) < 40 && Number(inputValue) > 9 || inputValue == '') {
-            cardInfo[inputNumber - 2].textContent = inputValue
-            flag = false
-        } else if (Number(inputValue) <= 9) {
-            cardInfo[inputNumber - 2].textContent = '0' + inputValue
-        } else {
-            flag = true
-        }
-
-        if (inputValue == '') {
-            cardInfo[inputNumber - 2].textContent = '00'
-        }
-    } else if (inputNumber == 5) {
-        if (Number(inputValue) || inputValue == '') {
-            cardInfo[inputNumber - 1].textContent = inputValue
-            flag = false
-        } else {
-            flag = true
-        }
-
-        if (inputValue == '') {
-            cardInfo[inputNumber - 1].textContent = '000'
-        }
+            break;
+        case 2:
+            if (Number(inputValue) || !inputValue) {
+                cardText[inputNumber - 2].textContent = inputValue
+                if (!inputValue) {
+                    cardText[inputNumber - 2].textContent = '0000 0000 0000 0000'
+                    flag = false
+                }
+            } else {
+                inputs[inputNumber - 1].style.outline = '1px solid red'
+                flag = true
+            }
+            break;
+        case 3:
+            if (Number(inputValue) <= 12 && Number(inputValue) > 9 || !inputValue) {
+                wrongFormulas[2].textContent = 'Wrong format'
+                cardText[inputNumber].textContent = inputValue
+                flag = false
+                if (!inputValue) {
+                    cardText[inputNumber].textContent = '00'
+                }
+            } else if (Number(inputValue) <= 9) {
+                cardText[inputNumber].textContent = '0' + inputValue
+            } else {
+                flag = true
+            }
+            break;
+        case 4:
+            if (Number(inputValue) < 40 && Number(inputValue) > 9 || !inputValue) {
+                cardText[inputNumber - 2].textContent = inputValue
+                flag = false
+                if (!inputValue) {
+                    cardText[inputNumber - 2].textContent = '00'
+                }
+            } else if (Number(inputValue) <= 9) {
+                cardText[inputNumber - 2].textContent = '0' + inputValue
+            } else {
+                flag = true
+            }
+            break;
+        case 5:
+            if (Number(inputValue) || !inputValue) {
+                wrongFormulas[3].textContent = 'Wrong format'
+                cardText[inputNumber - 1].textContent = inputValue
+                flag = false
+                if (!inputValue) {
+                    cardText[inputNumber - 1].textContent = '000'
+                }
+            } else {
+                flag = true
+            }
     }
+
+
+    /*-----------------FLAG-----------------*/
 
     if (flag == true) {
         if (inputNumber == 4) {
@@ -105,6 +120,32 @@ inputs.forEach(input => input.addEventListener('keyup', (e) => {
 
 
 btns.forEach(btn => btn.addEventListener('click', () => {
-    cardWrapper.classList.toggle('noActive')
-    completeState.classList.toggle('noActive')
+
+    emptyInputs = inputs.filter(input => input.value.length == 0)
+    inputs.forEach(input => {
+        if (input.style.outline === '1px solid red') {
+            flag = true;
+        }
+    })
+    if (emptyInputs.length == 0 && flag === false) {
+        console.log('completeState')
+        startState.classList.toggle('noActive')
+        completeState.classList.toggle('noActive')
+        btn.textContent = 'Continue'
+    } else {
+        emptyInputs.forEach(emptyInput => {
+            emptyInput.style.outline = '1px solid red'
+            emptyInput.style.opacity = '1';
+            emptyInput.nextElementSibling.textContent = "Can't be blank"
+            emptyInput.nextElementSibling.style.opacity = "1"
+        })
+    }
+
+    if (completeState.classList.length == 2) {
+        btn.textContent = 'Continue'
+    } else {
+        btn.textContent = 'Confirm'
+    }
+
+
 }))
