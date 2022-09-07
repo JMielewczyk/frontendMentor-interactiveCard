@@ -172,12 +172,12 @@ btns.forEach(btn => btn.addEventListener('click', () => {
         })
     }
 
-
-    if (completeState.classList.length == 2) {
-        btn.textContent = 'Continue'
-    } else {
-        btn.textContent = 'Confirm'
-    }
+    completeState.classList.length == 2 ? btn.textContent = 'Continue' : btn.textContent = 'Confirm'
+    // if (completeState.classList.length == 2) {
+    //     btn.textContent = 'Continue'
+    // } else {
+    //     btn.textContent = 'Confirm'
+    // }
 
 
 }))
