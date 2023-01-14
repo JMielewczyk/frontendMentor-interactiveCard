@@ -1,2 +1,3 @@
 Challenge by Frontend Mentor.
-Almost done, still some bugs exist. Working...
+
+Link: https://jmielewczyk.github.io/frontendMentor-interactiveCard/
